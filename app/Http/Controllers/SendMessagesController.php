@@ -130,8 +130,15 @@ class SendMessagesController extends Controller
         //return $currentDate;
         //$messagesSent = MessageSent::where('fecha_generacion', $currentDate)->get()[0];
 
-        return MessageSent::where('celular', '3152139217')->first();
+        $messagesSent = MessageSent::where([
+            ['fecha_generacion', $currentDate],
+            ['celular', '!=', null],
+            ['mensaje_enviado', "0"]
+        ])->get();
 
-        return var_dump($messagesSent);
+
+        //return MessageSent::where('celular', '3152139217')->first();
+
+        return $messagesSent;
     }
 }

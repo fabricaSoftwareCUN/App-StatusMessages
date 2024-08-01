@@ -12,5 +12,5 @@ class MessageSent extends Model
 {
     use HasFactory;
 
-    protected $table = 'ICEBERG.MSJ_ENVIADOS';
+    protected $table = 'iceberg.msj_enviados_diario';
 }
