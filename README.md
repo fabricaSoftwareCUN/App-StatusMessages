@@ -10,4 +10,5 @@ To get a local copy up and running follow these simple example steps:
 
 ### PREREQUISITES 
 - PHP 7.4
-- Instatclient v12
+- Instantclient v12
+- Text editor (vim or nano)
