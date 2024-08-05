@@ -65,6 +65,8 @@ class SendMessagesCommand extends Command
         Storage::append('messages.txt', 'MENSAJES NO ENVIADOS ' . $messagesSent->count());
         */
 
+        Storage::append('messages.txt', 'MENSAJES NO ENVIADOS ' . $messagesSent->count());
+
         foreach ($messagesSent as $messageSent) {
             $valor = "0";
             $messageSent->MENSAJE_ENVIADO = "1";
@@ -110,7 +112,7 @@ class SendMessagesCommand extends Command
                         ]
                     ]);
 
-                    Storage::append('messages.txt', 'El response es el siguiente '. print_r($response->body(), true));
+                    Storage::append('messages.txt', 'El response es el siguiente '. print_r($response, true));
 
                 } catch (GuzzleException $e) {
                     Storage::append('messages.txt', 'Error: ' . $e->getMessage());
