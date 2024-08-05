@@ -62,8 +62,9 @@ class SendMessagesCommand extends Command
         ])->get();
 
         Storage::append('messages.txt', 'MENSAJES ENVIADOS ' . $messagesSent1->count());
-        Storage::append('messages.txt', 'MENSAJES NO ENVIADOS ' . $messagesSent->count());
         */
+        //Storage::append('messages.txt', 'MENSAJES NO ENVIADOS ' . $messagesSent->count());
+
 
         Storage::append('messages.txt', 'MENSAJES NO ENVIADOS ' . $messagesSent->count());
 
@@ -71,7 +72,7 @@ class SendMessagesCommand extends Command
             $valor = "0";
             $messageSent->MENSAJE_ENVIADO = "1";
             $messageSent->save();
-            /*
+
             try {
                 $valor = "0";
                 Storage::append('messages.txt', 'El mensaje es: ' . print_r($messageSent, true));
@@ -79,7 +80,7 @@ class SendMessagesCommand extends Command
             } catch (\Exception $e) {
                 Storage::append('messages.txt', $e);
             }
-            */
+
             $client = new Client();
                 //Storage::append('messages.txt', 'Entro');
 
@@ -101,7 +102,7 @@ class SendMessagesCommand extends Command
                 }
                 */
 
-                Storage::append('messages.txt', 'la data enviada es: ' . print_r($data, true));
+                //Storage::append('messages.txt', 'la data enviada es: ' . print_r($data, true));
 
                 try {
                     $response = $client->post('https://apimessages.cunapp.pro/api/Mensajeria/SendMessage', [
@@ -115,7 +116,7 @@ class SendMessagesCommand extends Command
                     Storage::append('messages.txt', 'El response es el siguiente '. print_r($response, true));
 
                 } catch (GuzzleException $e) {
-                    Storage::append('messages.txt', 'Error: ' . $e->getMessage());
+                    //Storage::append('messages.txt', 'Error: ' . $e->getMessage());
                 }
 
 
@@ -130,7 +131,7 @@ class SendMessagesCommand extends Command
             }
 
 
-        Storage::append('messages.txt', 'recorrio el ciclo');
+        ##Storage::append('messages.txt', 'recorrio el ciclo');
         //return 'api ejecutada';
 
 
