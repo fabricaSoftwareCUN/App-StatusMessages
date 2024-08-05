@@ -66,19 +66,18 @@ class SendMessagesCommand extends Command
         //Storage::append('messages.txt', 'MENSAJES NO ENVIADOS ' . $messagesSent->count());
 
 
-        Storage::append('messages.txt', 'MENSAJES NO ENVIADOS ' . $messagesSent->count());
+        //Storage::append('messages.txt', 'MENSAJES NO ENVIADOS ' . $messagesSent->count());
 
         foreach ($messagesSent as $messageSent) {
-            $valor = "0";
             $messageSent->MENSAJE_ENVIADO = "1";
             $messageSent->save();
 
             try {
                 $valor = "0";
-                Storage::append('messages.txt', 'El mensaje es: ' . print_r($messageSent, true));
+                //Storage::append('messages.txt', 'El mensaje es: ' . print_r($messageSent, true));
 
             } catch (\Exception $e) {
-                Storage::append('messages.txt', $e);
+                //Storage::append('messages.txt', $e);
             }
 
             $client = new Client();
@@ -113,14 +112,11 @@ class SendMessagesCommand extends Command
                         ]
                     ]);
 
-                    Storage::append('messages.txt', 'El response es el siguiente '. print_r($response, true));
+                    //Storage::append('messages.txt', 'El response es el siguiente '. print_r($response, true));
 
                 } catch (GuzzleException $e) {
                     //Storage::append('messages.txt', 'Error: ' . $e->getMessage());
                 }
-
-
-
 
                 //Storage::append('messages.txt', 'El response es el siguiente '. print_r($response));
                 //Storage::append('messages.txt', 'El id del mensaje es el siguiente: ' . $messageSent->id);
@@ -130,10 +126,8 @@ class SendMessagesCommand extends Command
                 //Storage::append('messages.txt', 'el resultado del mensaje enviado es igual aa : '. print_r($result));
             }
 
-
-        ##Storage::append('messages.txt', 'recorrio el ciclo');
+        //Storage::append('messages.txt', 'recorrio el ciclo');
         //return 'api ejecutada';
-
 
         return true;
     }

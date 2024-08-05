@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-=======
-
-recorrio el ciclo
-recorrio el ciclo
->>>>>>> 234a496e9e3310b1204b86cfe2cdc7c395c86e13
