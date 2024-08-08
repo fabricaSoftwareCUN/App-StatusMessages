@@ -38,8 +38,11 @@ To use this project the only one that is necesary is the next command:
 php artisan schedule:run  
 
 ## CONTRIBUTORS
-- Name: Cristian Felipe Delgado Quiroga
-- Email: cristian_delgado@cun.edu.co
+```
+- Cristian Felipe Delgado Quiroga / Fullstack Developer
+- Yilder Nicolas Perdomo Valderrama / DevOps Developer
+```
+
 
 
 
